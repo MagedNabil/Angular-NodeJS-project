@@ -1,0 +1,32 @@
+[
+    {
+        "name": "ahmed",
+        "age": 20,
+        "salary": 2000,
+        "statuse": "single"
+    },
+    {
+        "name": "ahmed",
+        "age": 25,
+        "salary": 3500,
+        "statuse": "engadge"
+    },
+    {
+        "name": "rahman",
+        "age": 30,
+        "salary": 4000,
+        "statuse": "married"
+    },
+    {
+        "name": "dola",
+        "age": "20",
+        "salary": 2300,
+        "statuse": "single"
+    },
+    {
+        "name": "ahmed",
+        "age": "45",
+        "salary": 3200,
+        "statuse": "engadge"
+    }
+]
