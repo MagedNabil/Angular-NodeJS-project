@@ -4,6 +4,8 @@ const port = 3000;
 const cors = require("cors");
 const morgan = require("morgan");
 // const emp = require("./emp-router");
+const adminRoute = require("./adminRouter")
+
 const empDb = require("./emp-roterDb.js");
 const drDb = require("./drs-roter");
 
@@ -13,6 +15,7 @@ app.use(express.json());
 // app.use("/", emp);
 app.use("/employees", empDb);
 app.use("/doctors", drDb);
+app.use('/admin', adminRoute);
 
 app.use(morgan("combined"));
 

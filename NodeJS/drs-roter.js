@@ -1,6 +1,8 @@
 const express = require("express");
 const emp = express.Router();
 const data = require("./dr-model");
+const authAdmin = require("./adminAuth");
+
 
 emp.use(express.json());
 
@@ -46,7 +48,7 @@ emp.get("/", async (req, res, next) => {
   }
 });
 
-emp.patch("/:id", async (req, res, next) => {
+emp.patch("/:id", authAdmin, async (req, res, next) => {
   try {
     let err = new Error("No matching  found");
     const emps = await data.find();
@@ -65,7 +67,7 @@ emp.patch("/:id", async (req, res, next) => {
   }
 });
 
-emp.delete("/:id", async (req, res) => {
+emp.delete("/:id", authAdmin, async (req, res) => {
   try {
     let err = new Error("No matching  found");
     const emps = await data.find();
@@ -82,7 +84,7 @@ emp.delete("/:id", async (req, res) => {
   }
 });
 
-emp.post("/", async (req, res) => {
+emp.post("/", authAdmin, async (req, res) => {
   try {
     const emp = new data({ ...req.body });
     const createdUser = await emp.save();
