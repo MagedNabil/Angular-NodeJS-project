@@ -1,12 +1,12 @@
-const Admin = require("./adminModel");
+const Admin = require("../admin/adminModel");
 const express = require("express");
 const adminRouter = express.Router();
-const login = require("./adminController")
+const login = require("../admin/adminController")
 
 adminRouter.post("/", async (req, res, next) => {
   try {
-    const { username, password,email } = req.body;
-    const admin = new Admin({username, password,email});
+    const { username, password, email } = req.body;
+    const admin = new Admin({ username, password, email });
     const newAdmin = await admin.save();
     res.send(newAdmin);
   } catch (error) {
@@ -14,7 +14,7 @@ adminRouter.post("/", async (req, res, next) => {
     next(error);
   }
 });
-adminRouter.post("/login",login)
+adminRouter.post("/login", login)
 
 
 

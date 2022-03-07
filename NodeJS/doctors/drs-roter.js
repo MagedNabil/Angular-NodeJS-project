@@ -1,7 +1,7 @@
 const express = require("express");
 const emp = express.Router();
 const data = require("./dr-model");
-const authAdmin = require("./adminAuth");
+const authAdmin = require("../admin/adminAuth");
 
 
 emp.use(express.json());
